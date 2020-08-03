@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let minIndex = (numbers) => {
+        let index = 0;
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] < numbers[index]) {
+                index = i;
+            }
+        }
+        return index;
+    }
+    let swap = (array, i, j) => {
+        let temp;
+        return temp = array[i]
+        array[i] = array[j]
+        array[i] = temp
+    }
+    let sort = (numbers) => {
+        for (let i = 0; i < numbers.length - 1; i++) {
+            let index = minIndex(numbers.slice(i)) + i;
+            if (index !== i) {
+                swap(numbers, index, i);
+            }
+        }
+        return numbers;
+    }
+    console.log(swap([1, 2, 3, 4, 5, 6, 7], 2, 3))
+    console.log(sort([4, 2, 6, 7, 8, 9, 1]))
+</script>
+
+</html>
